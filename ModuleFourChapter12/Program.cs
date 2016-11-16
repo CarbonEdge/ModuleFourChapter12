@@ -14,11 +14,15 @@ namespace ModuleFourChapter12
             DeclareImplicitVars();
             ///////
             addNumbers nums1000 = new addNumbers();
-            List<randomNumbers> Tlist = nums1000.returnList();
-            foreach (var x in Tlist)
+
+            var sql = nums1000.returnList().Select(p => p.randomNum);
+            foreach (var x in sql)
             {
                 Console.WriteLine(x);
             }
+
+
+            //////////////
             Console.ReadKey();
         }
         static void DeclareImplicitVars()
